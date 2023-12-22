@@ -14,14 +14,15 @@
   </ion-header>
 
   <ion-list *ngFor="let articulo of gestionArticulos.getArticulos()">
+    <!--Elemento ion-card-->
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{articulo.source.name}}</ion-card-title>
       </ion-card-header>
-      
       <ion-card-content>
         {{articulo.title}}
       </ion-card-content>
+      <!--Se usa un boton en vez de un check-box-->
       <ion-button (click)="onClick(articulo)">Añadir</ion-button>
     </ion-card>
   </ion-list>
