@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GestionArticulosService } from '../servicios/gestion-articulos.service';
-import { Articulo } from '../interfaces/mis-interfaces';
+import { GestionArticulosService } from '../../servicios/gestion-articulos.service';
+import { Articulo } from '../../interfaces/mis-interfaces';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -11,8 +11,6 @@ import { AlertController } from '@ionic/angular';
 export class Tab2Page {
 
   constructor(public gestionArticulos: GestionArticulosService, private alerta: AlertController) {}
-
-
 
   /**
    * Metodo que crea la alerta y borra en caso de aceptar
@@ -27,8 +25,7 @@ export class Tab2Page {
         {
           text: 'Cancel',
           role: 'cancel',
-          cssClass: 'secondary',
-          
+          cssClass: 'secondary',    
         }, {
           text: 'Ok',
           handler: (data) => {

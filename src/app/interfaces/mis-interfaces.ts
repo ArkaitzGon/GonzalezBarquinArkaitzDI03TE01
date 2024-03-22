@@ -1,4 +1,4 @@
-export interface IElemento {
+export interface Respuesta {
   status: string;
   totalResults: number;
   articles: Articulo[];

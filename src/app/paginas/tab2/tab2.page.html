@@ -1,33 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Mis Noticias
+      Leer noticias
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Leer</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-list *ngFor="let articulo of gestionArticulos.getArticulosLeer()">
     <!--Elemento ion-card-->
     <ion-card>
       <ion-card-header>
-        <ion-card-title>{{articulo.source.name}}</ion-card-title>
+        <ion-card-subtitle>{{articulo.source.name}}</ion-card-subtitle>
+        <ion-card-title>{{articulo.title}}</ion-card-title>
       </ion-card-header>
+      <ion-img src={{articulo.urlToImage}}></ion-img>
       <ion-card-content>
-        <ion-item>
-          <h2><strong>{{articulo.title}}</strong></h2>
-          <img src={{articulo.urlToImage}}>
           <p>{{articulo.description}}</p>
-          <a href={{articulo.url}}>Leer</a>
-        </ion-item>
         <ion-item>
           <ion-icon slot="end" size="large" name="trash" (click)="borrar(articulo)"></ion-icon>
+          <ion-label><a href={{articulo.url}}>Leer</a></ion-label>
         </ion-item>
       </ion-card-content>
     </ion-card>
