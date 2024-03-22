@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Noticias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let articulo of gestionArticulos.getArticulos()">
+    <ion-item>
+      <ion-checkbox color="primary" slot="start" (ionChange)="selecArticulo($event, articulo)"></ion-checkbox>
+      <ion-label>
+        <h3>{{articulo.source.name}}</h3>
+        <p>{{articulo.title}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content>
